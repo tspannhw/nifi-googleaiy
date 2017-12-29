@@ -1,0 +1,162 @@
+MiNiFi Config Version: 3
+Flow Controller:
+  name: MiniFiVoice
+  comment: ''
+Core Properties:
+  flow controller graceful shutdown period: 10 sec
+  flow service write delay interval: 500 ms
+  administrative yield duration: 30 sec
+  bored yield duration: 10 millis
+  max concurrent threads: 1
+  variable registry properties: ''
+FlowFile Repository:
+  partitions: 256
+  checkpoint interval: 2 mins
+  always sync: false
+  Swap:
+    threshold: 20000
+    in period: 5 sec
+    in threads: 1
+    out period: 5 sec
+    out threads: 4
+Content Repository:
+  content claim max appendable size: 10 MB
+  content claim max flow files: 100
+  always sync: false
+Provenance Repository:
+  provenance rollover time: 1 min
+  implementation: org.apache.nifi.provenance.MiNiFiPersistentProvenanceRepository
+Component Status Repository:
+  buffer size: 1440
+  snapshot frequency: 1 min
+Security Properties:
+  keystore: ''
+  keystore type: ''
+  keystore password: ''
+  key password: ''
+  truststore: ''
+  truststore type: ''
+  truststore password: ''
+  ssl protocol: ''
+  Sensitive Props:
+    key:
+    algorithm: PBEWITHMD5AND256BITAES-CBC-OPENSSL
+    provider: BC
+Processors:
+- id: 57a0ec4d-6e61-3f68-0000-000000000000
+  name: CleanupLogs
+  class: org.apache.nifi.processors.standard.ExecuteProcess
+  max concurrent tasks: 1
+  scheduling strategy: TIMER_DRIVEN
+  scheduling period: 0 sec
+  penalization period: 30 sec
+  yield period: 1 sec
+  run duration nanos: 0
+  auto-terminated relationships list: []
+  Properties:
+    Argument Delimiter: ' '
+    Batch Duration:
+    Command: /home/pi/minifi-0.3.0/logs/cleanup.sh
+    Command Arguments:
+    Redirect Error Stream: 'false'
+    Working Directory:
+- id: d61f28f7-5305-3bc5-0000-000000000000
+  name: Get Voice Recordings
+  class: org.apache.nifi.processors.standard.GetFile
+  max concurrent tasks: 1
+  scheduling strategy: TIMER_DRIVEN
+  scheduling period: 30 sec
+  penalization period: 30 sec
+  yield period: 1 sec
+  run duration nanos: 0
+  auto-terminated relationships list: []
+  Properties:
+    Batch Size: '1'
+    File Filter: '[^\.].*'
+    Ignore Hidden Files: 'false'
+    Input Directory: /opt/demo/voices
+    Keep Source File: 'false'
+    Maximum File Age:
+    Maximum File Size:
+    Minimum File Age: 60 sec
+    Minimum File Size: 4096 B
+    Path Filter:
+    Polling Interval: 120 sec
+    Recurse Subdirectories: 'true'
+- id: 58b61a01-8e44-3599-0000-000000000000
+  name: TailFile
+  class: org.apache.nifi.processors.standard.TailFile
+  max concurrent tasks: 1
+  scheduling strategy: TIMER_DRIVEN
+  scheduling period: 0 sec
+  penalization period: 30 sec
+  yield period: 1 sec
+  run duration nanos: 0
+  auto-terminated relationships list: []
+  Properties:
+    File Location: Local
+    File to Tail: /opt/demo/commands.txt
+    Initial Start Position: Beginning of File
+    Rolling Filename Pattern:
+    tail-base-directory:
+    tail-mode: Single file
+    tailfile-lookup-frequency: 10 minutes
+    tailfile-maximum-age: 24 hours
+    tailfile-recursive-lookup: 'false'
+Controller Services: []
+Process Groups: []
+Input Ports: []
+Output Ports: []
+Funnels: []
+Connections:
+- id: b990270d-0d98-308c-0000-000000000000
+  name: CleanupLogs/success/b0af3bdf-6f65-1a2d-e70e-a83d25b15a49
+  source id: 57a0ec4d-6e61-3f68-0000-000000000000
+  source relationship names:
+  - success
+  destination id: b0af3bdf-6f65-1a2d-e70e-a83d25b15a49
+  max work queue size: 10000
+  max work queue data size: 1 GB
+  flowfile expiration: 0 sec
+  queue prioritizer class: ''
+- id: e76ae22f-6257-380a-0000-000000000000
+  name: Get Voice Recordings/success/b0af3bdf-6f65-1a2d-e70e-a83d25b15a49
+  source id: d61f28f7-5305-3bc5-0000-000000000000
+  source relationship names:
+  - success
+  destination id: b0af3bdf-6f65-1a2d-e70e-a83d25b15a49
+  max work queue size: 10000
+  max work queue data size: 1 GB
+  flowfile expiration: 0 sec
+  queue prioritizer class: ''
+- id: 129893bf-6885-3be3-0000-000000000000
+  name: TailFile/success/b0af3bdf-6f65-1a2d-e70e-a83d25b15a49
+  source id: 58b61a01-8e44-3599-0000-000000000000
+  source relationship names:
+  - success
+  destination id: b0af3bdf-6f65-1a2d-e70e-a83d25b15a49
+  max work queue size: 10000
+  max work queue data size: 1 GB
+  flowfile expiration: 0 sec
+  queue prioritizer class: ''
+Remote Process Groups:
+- id: fe2a1d41-6eb9-3513-0000-000000000000
+  name: ''
+  url: http://hw13125.local:8080/nifi
+  comment: ''
+  timeout: 30 sec
+  yield period: 10 sec
+  transport protocol: HTTP
+  proxy host: ''
+  proxy port: ''
+  proxy user: ''
+  proxy password: ''
+  local network interface: ''
+  Input Ports:
+  - id: b0af3bdf-6f65-1a2d-e70e-a83d25b15a49
+    name: AIY VOICE INPUT
+    comment: ''
+    max concurrent tasks: 1
+    use compression: false
+  Output Ports: []
+NiFi Properties Overrides: {}

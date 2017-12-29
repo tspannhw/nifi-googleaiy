@@ -1,0 +1,520 @@
+<?xml version="1.0" ?>
+<template encoding-version="1.1">
+  <description></description>
+  <groupId>b0af3bcb-6f65-1a2d-a932-2699ed0b6699</groupId>
+  <name>MiniFiVoice</name>
+  <snippet>
+    <connections>
+      <id>b990270d-0d98-308c-0000-000000000000</id>
+      <parentGroupId>b9af3b82-98b8-3234-0000-000000000000</parentGroupId>
+      <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+      <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+      <destination>
+        <groupId>fe2a1d41-6eb9-3513-0000-000000000000</groupId>
+        <id>743f7788-4c76-3e00-bd1e-5f331d0f4da6</id>
+        <type>REMOTE_INPUT_PORT</type>
+      </destination>
+      <flowFileExpiration>0 sec</flowFileExpiration>
+      <labelIndex>1</labelIndex>
+      <name></name>
+      <selectedRelationships>success</selectedRelationships>
+      <source>
+        <groupId>b9af3b82-98b8-3234-0000-000000000000</groupId>
+        <id>57a0ec4d-6e61-3f68-0000-000000000000</id>
+        <type>PROCESSOR</type>
+      </source>
+      <zIndex>0</zIndex>
+    </connections>
+    <connections>
+      <id>e76ae22f-6257-380a-0000-000000000000</id>
+      <parentGroupId>b9af3b82-98b8-3234-0000-000000000000</parentGroupId>
+      <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+      <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+      <destination>
+        <groupId>fe2a1d41-6eb9-3513-0000-000000000000</groupId>
+        <id>743f7788-4c76-3e00-bd1e-5f331d0f4da6</id>
+        <type>REMOTE_INPUT_PORT</type>
+      </destination>
+      <flowFileExpiration>0 sec</flowFileExpiration>
+      <labelIndex>1</labelIndex>
+      <name></name>
+      <selectedRelationships>success</selectedRelationships>
+      <source>
+        <groupId>b9af3b82-98b8-3234-0000-000000000000</groupId>
+        <id>d61f28f7-5305-3bc5-0000-000000000000</id>
+        <type>PROCESSOR</type>
+      </source>
+      <zIndex>0</zIndex>
+    </connections>
+    <connections>
+      <id>129893bf-6885-3be3-0000-000000000000</id>
+      <parentGroupId>b9af3b82-98b8-3234-0000-000000000000</parentGroupId>
+      <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+      <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+      <destination>
+        <groupId>fe2a1d41-6eb9-3513-0000-000000000000</groupId>
+        <id>743f7788-4c76-3e00-bd1e-5f331d0f4da6</id>
+        <type>REMOTE_INPUT_PORT</type>
+      </destination>
+      <flowFileExpiration>0 sec</flowFileExpiration>
+      <labelIndex>1</labelIndex>
+      <name></name>
+      <selectedRelationships>success</selectedRelationships>
+      <source>
+        <groupId>b9af3b82-98b8-3234-0000-000000000000</groupId>
+        <id>58b61a01-8e44-3599-0000-000000000000</id>
+        <type>PROCESSOR</type>
+      </source>
+      <zIndex>0</zIndex>
+    </connections>
+    <processors>
+      <id>d61f28f7-5305-3bc5-0000-000000000000</id>
+      <parentGroupId>b9af3b82-98b8-3234-0000-000000000000</parentGroupId>
+      <position>
+        <x>751.0</x>
+        <y>338.72094575825145</y>
+      </position>
+      <bundle>
+        <artifact>nifi-standard-nar</artifact>
+        <group>org.apache.nifi</group>
+        <version>1.5.0-SNAPSHOT</version>
+      </bundle>
+      <config>
+        <bulletinLevel>WARN</bulletinLevel>
+        <comments></comments>
+        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+        <descriptors>
+          <entry>
+            <key>Input Directory</key>
+            <value>
+              <name>Input Directory</name>
+            </value>
+          </entry>
+          <entry>
+            <key>File Filter</key>
+            <value>
+              <name>File Filter</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Path Filter</key>
+            <value>
+              <name>Path Filter</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Batch Size</key>
+            <value>
+              <name>Batch Size</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Keep Source File</key>
+            <value>
+              <name>Keep Source File</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Recurse Subdirectories</key>
+            <value>
+              <name>Recurse Subdirectories</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Polling Interval</key>
+            <value>
+              <name>Polling Interval</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Ignore Hidden Files</key>
+            <value>
+              <name>Ignore Hidden Files</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Minimum File Age</key>
+            <value>
+              <name>Minimum File Age</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Maximum File Age</key>
+            <value>
+              <name>Maximum File Age</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Minimum File Size</key>
+            <value>
+              <name>Minimum File Size</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Maximum File Size</key>
+            <value>
+              <name>Maximum File Size</name>
+            </value>
+          </entry>
+        </descriptors>
+        <executionNode>ALL</executionNode>
+        <lossTolerant>false</lossTolerant>
+        <penaltyDuration>30 sec</penaltyDuration>
+        <properties>
+          <entry>
+            <key>Input Directory</key>
+            <value>/opt/demo/voices</value>
+          </entry>
+          <entry>
+            <key>File Filter</key>
+            <value>[^\.].*</value>
+          </entry>
+          <entry>
+            <key>Path Filter</key>
+          </entry>
+          <entry>
+            <key>Batch Size</key>
+            <value>1</value>
+          </entry>
+          <entry>
+            <key>Keep Source File</key>
+            <value>false</value>
+          </entry>
+          <entry>
+            <key>Recurse Subdirectories</key>
+            <value>true</value>
+          </entry>
+          <entry>
+            <key>Polling Interval</key>
+            <value>120 sec</value>
+          </entry>
+          <entry>
+            <key>Ignore Hidden Files</key>
+            <value>false</value>
+          </entry>
+          <entry>
+            <key>Minimum File Age</key>
+            <value>60 sec</value>
+          </entry>
+          <entry>
+            <key>Maximum File Age</key>
+          </entry>
+          <entry>
+            <key>Minimum File Size</key>
+            <value>4096 B</value>
+          </entry>
+          <entry>
+            <key>Maximum File Size</key>
+          </entry>
+        </properties>
+        <runDurationMillis>0</runDurationMillis>
+        <schedulingPeriod>30 sec</schedulingPeriod>
+        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+        <yieldDuration>1 sec</yieldDuration>
+      </config>
+      <name>Get Voice Recordings</name>
+      <relationships>
+        <autoTerminate>false</autoTerminate>
+        <name>success</name>
+      </relationships>
+      <state>RUNNING</state>
+      <style></style>
+      <type>org.apache.nifi.processors.standard.GetFile</type>
+    </processors>
+    <processors>
+      <id>57a0ec4d-6e61-3f68-0000-000000000000</id>
+      <parentGroupId>b9af3b82-98b8-3234-0000-000000000000</parentGroupId>
+      <position>
+        <x>563.4164558251541</x>
+        <y>58.37017853984639</y>
+      </position>
+      <bundle>
+        <artifact>nifi-standard-nar</artifact>
+        <group>org.apache.nifi</group>
+        <version>1.5.0-SNAPSHOT</version>
+      </bundle>
+      <config>
+        <bulletinLevel>WARN</bulletinLevel>
+        <comments></comments>
+        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+        <descriptors>
+          <entry>
+            <key>Command</key>
+            <value>
+              <name>Command</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Command Arguments</key>
+            <value>
+              <name>Command Arguments</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Batch Duration</key>
+            <value>
+              <name>Batch Duration</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Redirect Error Stream</key>
+            <value>
+              <name>Redirect Error Stream</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Working Directory</key>
+            <value>
+              <name>Working Directory</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Argument Delimiter</key>
+            <value>
+              <name>Argument Delimiter</name>
+            </value>
+          </entry>
+        </descriptors>
+        <executionNode>ALL</executionNode>
+        <lossTolerant>false</lossTolerant>
+        <penaltyDuration>30 sec</penaltyDuration>
+        <properties>
+          <entry>
+            <key>Command</key>
+            <value>/home/pi/minifi-0.3.0/logs/cleanup.sh</value>
+          </entry>
+          <entry>
+            <key>Command Arguments</key>
+          </entry>
+          <entry>
+            <key>Batch Duration</key>
+          </entry>
+          <entry>
+            <key>Redirect Error Stream</key>
+            <value>false</value>
+          </entry>
+          <entry>
+            <key>Working Directory</key>
+          </entry>
+          <entry>
+            <key>Argument Delimiter</key>
+            <value> </value>
+          </entry>
+        </properties>
+        <runDurationMillis>0</runDurationMillis>
+        <schedulingPeriod>0 sec</schedulingPeriod>
+        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+        <yieldDuration>1 sec</yieldDuration>
+      </config>
+      <name>CleanupLogs</name>
+      <relationships>
+        <autoTerminate>false</autoTerminate>
+        <name>success</name>
+      </relationships>
+      <state>RUNNING</state>
+      <style></style>
+      <type>org.apache.nifi.processors.standard.ExecuteProcess</type>
+    </processors>
+    <processors>
+      <id>58b61a01-8e44-3599-0000-000000000000</id>
+      <parentGroupId>b9af3b82-98b8-3234-0000-000000000000</parentGroupId>
+      <position>
+        <x>23.705534626366898</x>
+        <y>0.0</y>
+      </position>
+      <bundle>
+        <artifact>nifi-standard-nar</artifact>
+        <group>org.apache.nifi</group>
+        <version>1.5.0-SNAPSHOT</version>
+      </bundle>
+      <config>
+        <bulletinLevel>WARN</bulletinLevel>
+        <comments></comments>
+        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+        <descriptors>
+          <entry>
+            <key>tail-mode</key>
+            <value>
+              <name>tail-mode</name>
+            </value>
+          </entry>
+          <entry>
+            <key>File to Tail</key>
+            <value>
+              <name>File to Tail</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Rolling Filename Pattern</key>
+            <value>
+              <name>Rolling Filename Pattern</name>
+            </value>
+          </entry>
+          <entry>
+            <key>tail-base-directory</key>
+            <value>
+              <name>tail-base-directory</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Initial Start Position</key>
+            <value>
+              <name>Initial Start Position</name>
+            </value>
+          </entry>
+          <entry>
+            <key>File Location</key>
+            <value>
+              <name>File Location</name>
+            </value>
+          </entry>
+          <entry>
+            <key>tailfile-recursive-lookup</key>
+            <value>
+              <name>tailfile-recursive-lookup</name>
+            </value>
+          </entry>
+          <entry>
+            <key>tailfile-lookup-frequency</key>
+            <value>
+              <name>tailfile-lookup-frequency</name>
+            </value>
+          </entry>
+          <entry>
+            <key>tailfile-maximum-age</key>
+            <value>
+              <name>tailfile-maximum-age</name>
+            </value>
+          </entry>
+        </descriptors>
+        <executionNode>ALL</executionNode>
+        <lossTolerant>false</lossTolerant>
+        <penaltyDuration>30 sec</penaltyDuration>
+        <properties>
+          <entry>
+            <key>tail-mode</key>
+            <value>Single file</value>
+          </entry>
+          <entry>
+            <key>File to Tail</key>
+            <value>/opt/demo/commands.txt</value>
+          </entry>
+          <entry>
+            <key>Rolling Filename Pattern</key>
+          </entry>
+          <entry>
+            <key>tail-base-directory</key>
+          </entry>
+          <entry>
+            <key>Initial Start Position</key>
+            <value>Beginning of File</value>
+          </entry>
+          <entry>
+            <key>File Location</key>
+            <value>Local</value>
+          </entry>
+          <entry>
+            <key>tailfile-recursive-lookup</key>
+            <value>false</value>
+          </entry>
+          <entry>
+            <key>tailfile-lookup-frequency</key>
+            <value>10 minutes</value>
+          </entry>
+          <entry>
+            <key>tailfile-maximum-age</key>
+            <value>24 hours</value>
+          </entry>
+        </properties>
+        <runDurationMillis>0</runDurationMillis>
+        <schedulingPeriod>0 sec</schedulingPeriod>
+        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+        <yieldDuration>1 sec</yieldDuration>
+      </config>
+      <name>TailFile</name>
+      <relationships>
+        <autoTerminate>false</autoTerminate>
+        <name>success</name>
+      </relationships>
+      <state>RUNNING</state>
+      <style></style>
+      <type>org.apache.nifi.processors.standard.TailFile</type>
+    </processors>
+    <remoteProcessGroups>
+      <id>fe2a1d41-6eb9-3513-0000-000000000000</id>
+      <parentGroupId>b9af3b82-98b8-3234-0000-000000000000</parentGroupId>
+      <position>
+        <x>0.0</x>
+        <y>361.3701785398464</y>
+      </position>
+      <communicationsTimeout>30 sec</communicationsTimeout>
+      <contents>
+        <inputPorts>
+          <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+          <connected>true</connected>
+          <exists>true</exists>
+          <id>743f7788-4c76-3e00-bd1e-5f331d0f4da6</id>
+          <name>AIY VOICE INPUT</name>
+          <targetId>b0af3bdf-6f65-1a2d-e70e-a83d25b15a49</targetId>
+          <targetRunning>true</targetRunning>
+          <transmitting>true</transmitting>
+          <useCompression>false</useCompression>
+        </inputPorts>
+        <inputPorts>
+          <comments></comments>
+          <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+          <connected>false</connected>
+          <exists>true</exists>
+          <id>b0af3bd4-6f65-1a2d-f26c-040e9887b42b</id>
+          <name>MiniFi From TX1 Jetson</name>
+          <targetId>6f466132-3548-35c6-e8e8-facb1b5b60f9</targetId>
+          <targetRunning>false</targetRunning>
+          <transmitting>false</transmitting>
+          <useCompression>false</useCompression>
+        </inputPorts>
+        <inputPorts>
+          <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+          <connected>false</connected>
+          <exists>true</exists>
+          <id>b0af3bd5-6f65-1a2d-a183-6bb419c4dd48</id>
+          <name>Movidius Input</name>
+          <targetId>b0af3ba0-6f65-1a2d-8461-55aa9d4f6243</targetId>
+          <targetRunning>true</targetRunning>
+          <transmitting>false</transmitting>
+          <useCompression>false</useCompression>
+        </inputPorts>
+        <inputPorts>
+          <comments></comments>
+          <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+          <connected>false</connected>
+          <exists>true</exists>
+          <id>b0af3bd6-6f65-1a2d-56fc-719638ad04d9</id>
+          <name>ChristmasTreeInput</name>
+          <targetId>5b09ecbd-0160-1000-0589-15fe48da826c</targetId>
+          <targetRunning>true</targetRunning>
+          <transmitting>false</transmitting>
+          <useCompression>false</useCompression>
+        </inputPorts>
+        <inputPorts>
+          <comments></comments>
+          <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+          <connected>false</connected>
+          <exists>true</exists>
+          <id>b0af3bd7-6f65-1a2d-59ef-1e33e3814074</id>
+          <name>From ADP Remote Partition 1</name>
+          <targetId>dba83df1-d9d6-1b9b-5abc-809eacc93f44</targetId>
+          <targetRunning>true</targetRunning>
+          <transmitting>false</transmitting>
+          <useCompression>false</useCompression>
+        </inputPorts>
+      </contents>
+      <proxyHost></proxyHost>
+      <proxyUser></proxyUser>
+      <targetUri>http://hw13125.local:8080/nifi</targetUri>
+      <targetUris>http://hw13125.local:8080/nifi</targetUris>
+      <transportProtocol>HTTP</transportProtocol>
+      <yieldDuration>10 sec</yieldDuration>
+    </remoteProcessGroups>
+  </snippet>
+  <timestamp>12/29/2017 14:55:09 EST</timestamp>
+</template>
